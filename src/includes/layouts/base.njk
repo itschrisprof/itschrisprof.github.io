@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title or "Mi Portfolio" }}</title>
+  <link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body class="font-mono bg-white text-black">
+  <header class="p-6 bg-gray-100">
+    <h1 class="text-3xl font-bold">Mi Portfolio</h1>
+  </header>
+  <main class="p-6">
+    {{ content | safe }}
+  </main>
+  <footer class="p-6 bg-gray-100 text-center font-mono text-sm">
+    © 2025 Mi Nombre
+  </footer>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* aquí tus overrides, variables CSS o @layer si los necesitas */

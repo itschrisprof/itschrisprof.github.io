@@ -1,0 +1,24 @@
+{
+  "name": "itschrisprof.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "postcss src/assets/css/tailwind.css -o assets/css/main.css",
+    "build:site": "eleventy",
+    "build": "npm run build:css && npm run build:site",
+    "dev": "npm run build:css && npm run build:site -- --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.0",
+    "@tailwindcss/cli": "^4.1.6",
+    "@tailwindcss/postcss": "^4.1.6",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^4.1.6"
+  }
+}
