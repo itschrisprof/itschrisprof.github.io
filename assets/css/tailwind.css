@@ -1,4 +1,3 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
+@import "tailwindcss";
 
 /* aquí tus overrides, variables CSS o @layer si los necesitas */
