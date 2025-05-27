@@ -1,0 +1,24 @@
+---
+layout: base.njk
+title: "Inicio"
+---
+
+
+<section class="relative h-screen bg-black overflow-hidden">
+  <!-- Terminal animado de fondo -->
+  <pre id="terminal"
+       class="absolute inset-0 m-0 p-8 font-mono text-green-400 text-lg select-none pointer-events-none">
+    <span class="prompt">$ </span><span id="typed"></span><span class="cursor-blink inline-block w-1 bg-green-400"></span>
+  </pre>
+
+  <!-- Contenido principal encima, oculto inicialmente -->
+  <!--<div class="hero-content relative z-10 flex flex-col items-center justify-center h-full text-center px-4 text-white opacity-0 animate-fade-In delay-500">-->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 text-white opacity-0 animate-fade-in-scale delay-500">
+    <h1 class="font-pixel text-5xl md:text-7xl mb-4">Hola, soy Christian</h1>
+    <p class="font-mono text-lg md:text-xl mb-6">Desarrollador Full Stack, profesor y fan de Linux</p>
+    <a href="/projects/"
+       class="px-8 py-3 bg-white text-black rounded-lg hover:bg-term-amber transition">
+      Ver proyectos
+    </a>
+  </div>
+</section>

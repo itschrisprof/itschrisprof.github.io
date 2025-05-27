@@ -4,20 +4,13 @@
   <meta charset="UTF-8" />
   <title>{{ title or "Mi Portfolio" }}</title>
   <link rel="stylesheet" href="/assets/css/main.css" />
-  <style>
-    html { scroll-behavior: smooth; }
-  </style>
 </head>
 <body class="font-mono bg-white text-black flex flex-col min-h-screen">
-  {%- include "partials/header.njk" -%}
-
-  <main class="flex-1">
+  {% include "partials/header.njk" %}
+  <main class="p-6 flex-1">
     {{ content | safe }}
   </main>
-
-  {%- include "partials/footer.njk" -%}
-  
+  {% include "partials/footer.njk" %}
   <script src="/assets/js/main.js"></script>
 </body>
 </html>
-

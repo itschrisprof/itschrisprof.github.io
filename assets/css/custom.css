@@ -1,0 +1,30 @@
+/* custom.css */
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes blink {
+  0%, 50%  { opacity: 1; }
+  51%,100% { opacity: 0; }
+}
+
+/* Clases de animación */
+
+/* Hero content: fade-in con delay de 0.5s */
+.hero-content {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.5s forwards;
+}
+
+/* Cursor parpadeante */
+.cursor {
+  display: inline-block;           /* necesario para width/height */
+  width: 4px;                      /* lo que antes daba 'w-1' */
+  height: 1em;                     /* igual a la altura de la línea de texto */
+  vertical-align: middle;          /* ajusta su posición respecto al texto */
+  background-color: currentColor;  /* hereda el text-color (green-400) */
+  animation: blink 1s step-end infinite;
+}
