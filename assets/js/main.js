@@ -1,13 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const text = "print(\"Bienvenido a mi sitio web\");";
+  const text = [
+    'neofetch --user "Christian"',
+    '→ Desarrollador full stack y mentor',
+    '→ Linux, JavaScript y aprendizaje continuo'
+  ].join('\n');
   const typedEl = document.getElementById('typed');
   let i = 0;
   function type() {
     if (i < text.length) {
       typedEl.textContent += text[i++];
-      setTimeout(type, 100);
+      setTimeout(type, 90);
     }
   }
-  setTimeout(type, 600);
+  setTimeout(type, 500);
 });
 
