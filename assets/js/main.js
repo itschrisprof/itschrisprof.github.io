@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const text = [
     'neofetch --user "Christian"',
-    '→ Multiuso: docencia, SRE y cultura libre',
-    '→ Clases presenciales + virtuales con infraestructura propia',
-    '→ Mentorías para ex alumnos y equipos curiosos'
+    '→ Desarrollador full stack y mentor',
+    '→ Linux, JavaScript y aprendizaje continuo'
   ].join('\n');
   const typedEl = document.getElementById('typed');
   let i = 0;
