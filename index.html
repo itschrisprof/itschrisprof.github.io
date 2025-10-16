@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Christian Barrios | Desarrollador Full Stack</title>
-  <meta name="description" content="Landing page del portfolio de Christian Barrios, desarrollador full stack, profesor y creador de experiencias digitales." />
+  <title>Christian Barrios | Facilitador multiuso & SRE educativo</title>
+  <meta name="description" content="Portfolio de Christian Barrios, facilitador multiuso enfocado en docencia de programación y administración de servidores. Diseño clases presenciales y virtuales, y acompaño equipos en cultura SRE." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -229,7 +229,7 @@
       background: radial-gradient(circle at 0% 0%, rgba(48, 242, 170, 0.28), transparent 55%), var(--surface-strong);
       border: 1px solid rgba(148, 163, 184, 0.14);
       box-shadow: var(--shadow-lg);
-      min-height: 420px;
+      min-height: 500px;
     }
 
     .terminal-header {
@@ -251,10 +251,10 @@
     .terminal-body {
       position: relative;
       height: 100%;
-      padding: 2rem 2.5rem 2.5rem;
+      padding: 2.25rem 2.75rem 2.75rem;
       font-size: 1rem;
       color: #30f2aa;
-      line-height: 1.8;
+      line-height: 1.75;
       font-weight: 500;
       white-space: pre-wrap;
       text-shadow: 0 12px 18px rgba(0, 0, 0, 0.55);
@@ -623,7 +623,7 @@
       }
       .hero-terminal {
         order: -1;
-        min-height: 360px;
+        min-height: 420px;
       }
       .hero-copy {
         text-align: center;
@@ -656,6 +656,14 @@
       .hero {
         padding-top: 5rem;
       }
+      .hero-terminal {
+        min-height: 380px;
+      }
+      .terminal-body {
+        padding: 2rem 2.25rem 2.25rem;
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
       .hero-stats {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -667,6 +675,17 @@
       }
       .contact-card {
         padding: 2.4rem 1.8rem;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .hero-terminal {
+        min-height: 340px;
+      }
+      .terminal-body {
+        padding: 1.75rem 1.85rem 2rem;
+        font-size: 0.9rem;
+        line-height: 1.65;
       }
     }
 
@@ -708,29 +727,28 @@
     <section id="hero" class="hero">
       <div class="hero-inner">
         <div class="hero-copy">
-          <span class="eyebrow">Desarrollador Full Stack · Profesor</span>
-          <h1 class="hero-title">Creo experiencias digitales que combinan código, diseño y comunidad.</h1>
+          <span class="eyebrow">Educador técnico · SRE multiuso</span>
+          <h1 class="hero-title">Multiplico el aprendizaje con infraestructura estable y humana.</h1>
           <p class="hero-description">
-            Soy Christian Barrios, entusiasta del software libre y defensor del aprendizaje continuo.
-            Diseñé este espacio para mostrar cómo transformo ideas en productos funcionales:
-            aplicaciones web, herramientas internas y recursos educativos para equipos en crecimiento.
+            Soy Christian Barrios, un facilitador multiuso que acompaña a comunidades, escuelas y equipos en su viaje tecnológico.
+            Combino la docencia de programación con la administración de servidores para que cada clase —presencial o virtual— se apoye en plataformas confiables y accesibles.
           </p>
           <div class="cta-group">
-            <a class="btn-primary" href="#projects">Ver proyectos destacados</a>
-            <a class="btn-secondary" href="#contact">Agendar una reunión</a>
+            <a class="btn-primary" href="#services">Descubrir programas educativos</a>
+            <a class="btn-secondary" href="#contact">Coordinar una sesión</a>
           </div>
           <div class="hero-stats">
             <div class="stat-card">
-              <strong>5+</strong>
-              Años creando soluciones web
+              <strong>7+</strong>
+              Años conectando aulas y operaciones
             </div>
             <div class="stat-card">
-              <strong>30</strong>
-              Proyectos lanzados con éxito
+              <strong>120</strong>
+              Clases presenciales y virtuales facilitadas
             </div>
             <div class="stat-card">
-              <strong>250</strong>
-              Estudiantes guiados en clases online
+              <strong>18</strong>
+              Infraestructuras educativas documentadas
             </div>
           </div>
         </div>
@@ -753,37 +771,37 @@
       <div class="section-inner">
         <div class="section-header">
           <span class="section-kicker">Sobre mí</span>
-          <h2 class="section-title">Código con intención y una pizca de terminal.</h2>
+          <h2 class="section-title">Acompaño comunidades desde la terminal y el aula.</h2>
           <p class="section-description">
-            Me especializo en construir productos con arquitecturas modernas, flujos de trabajo automatizados y un enfoque en la accesibilidad.
-            Cuando no estoy programando, me encontrarás enseñando a nuevas generaciones de desarrolladores cómo pensar con lógica y curiosidad.
+            Mi rol multiuso une la pedagogía con la confiabilidad operativa: diseño planes de estudio, mantengo servidores y comparto prácticas de cultura SRE.
+            Trabajo con herramientas libres y documentación clara para que cada equipo pueda continuar su camino sin depender de un único experto.
           </p>
         </div>
         <div class="about-grid">
           <div class="about-card">
             <h3>Lo que me mueve</h3>
             <p>
-              Combinar herramientas open source, buenas prácticas y una comunicación clara para entregar productos que realmente solucionen problemas.
-              Creo en construir software sostenible, con documentación útil y procesos que permitan iterar rápido.
+              Crear entornos de aprendizaje seguros, inclusivos y sostenibles.
+              Me enfoco en traducir problemas complejos en guías accionables que combinan monitoreo, automatización y dinámicas participativas.
             </p>
             <ul>
-              <li>✨ Mentoría personalizada para equipos que comienzan.</li>
-              <li>🛠️ Automatización de tareas con scripts y pipelines.</li>
-              <li>🌐 Diseño de interfaces amigables usando componentes reutilizables.</li>
+              <li>🧰 Diagnóstico integral de servidores y plataformas educativas.</li>
+              <li>👥 Programas híbridos que mezclan talleres presenciales y sesiones remotas.</li>
+              <li>📖 Documentación y manuales que empoderan a ex alumnos y facilitadores.</li>
             </ul>
           </div>
           <div class="timeline">
             <div class="timeline-item">
-              <strong>2020 · Primeras líneas en producción</strong>
-              <span>Desarrollé dashboards con JavaScript y herramientas no-code para emprendimientos locales.</span>
+              <strong>2018 · Aula itinerante</strong>
+              <span>Comencé a dictar cursos presenciales de programación en centros comunitarios y escuelas técnicas.</span>
             </div>
             <div class="timeline-item">
-              <strong>2022 · Edición de notas minimalista</strong>
-              <span>Creé un editor web en vivo con sincronización en la nube y temas personalizables.</span>
+              <strong>2021 · Operaciones educativas</strong>
+              <span>Migré laboratorios virtuales a infraestructura Linux administrada con prácticas SRE y automatización de despliegues.</span>
             </div>
             <div class="timeline-item">
-              <strong>2024 · Comunidad de aprendizaje</strong>
-              <span>Profesor en cursos online de desarrollo web; diseñé guías, retos y repositorios colaborativos.</span>
+              <strong>2024 · Comunidad de ex alumnos</strong>
+              <span>Coordino mentorías grupales online, círculos de estudio y documentación colaborativa para sostener el aprendizaje continuo.</span>
             </div>
           </div>
         </div>
@@ -794,46 +812,48 @@
       <div class="section-inner">
         <div class="section-header">
           <span class="section-kicker">Servicios</span>
-          <h2 class="section-title">¿Cómo puedo ayudarte?</h2>
+          <h2 class="section-title">Programas que combinan docencia y confiabilidad.</h2>
           <p class="section-description">
-            Acompaño a startups, equipos educativos y proyectos independientes en el proceso completo: descubrimiento, prototipado, desarrollo y lanzamiento.
+            Diseñamos juntos experiencias de aprendizaje sostenibles: desde la infraestructura que sostiene la clase hasta el seguimiento personalizado de cada estudiante.
+            Trabajo con instituciones, comunidades y personas curiosas que valoran la experimentación guiada.
           </p>
         </div>
         <div class="feature-grid">
           <article class="feature-card">
-            <span class="icon">⚙️</span>
-            <h3>Aplicaciones a medida</h3>
+            <span class="icon">🖥️</span>
+            <h3>Infraestructura educativa</h3>
             <p>
-              Arquitecturas modulares, APIs REST y frontends escalables. Construyo con JavaScript, TypeScript y entornos basados en Node y frameworks modernos.
+              Implemento y administro servidores Linux, entornos de práctica y pipelines de despliegue pensados para talleres y bootcamps.
+              Todo queda documentado para que el equipo pueda continuar iterando.
             </p>
             <ul>
-              <li>Integraciones con servicios externos</li>
-              <li>Componentes reutilizables y testeados</li>
-              <li>Documentación lista para equipos</li>
+              <li>Monitoreo y alertas adaptadas a cohortes.</li>
+              <li>Laboratorios reproducibles con contenedores.</li>
+              <li>Automatización de respaldos y accesos.</li>
             </ul>
           </article>
           <article class="feature-card">
-            <span class="icon">🧪</span>
-            <h3>Experiencia del usuario</h3>
+            <span class="icon">🎒</span>
+            <h3>Clases híbridas</h3>
             <p>
-              Diseño wireframes, prototipos y flujos claros para mejorar la retención. Testeo con usuarios y traduzco datos en mejoras accionables.
+              Diseños curriculares orientados a la práctica con materiales descargables, guías paso a paso y dinámicas colaborativas presenciales y online.
             </p>
             <ul>
-              <li>Auditoría de UX y accesibilidad</li>
-              <li>Guías de estilo con componentes UI</li>
-              <li>Validación con métricas reales</li>
+              <li>Secuencias didácticas personalizadas.</li>
+              <li>Evaluaciones vivas y feedback en vivo.</li>
+              <li>Recursos accesibles y orientados a la diversidad.</li>
             </ul>
           </article>
           <article class="feature-card">
-            <span class="icon">📚</span>
-            <h3>Formación & mentoría</h3>
+            <span class="icon">🤝</span>
+            <h3>Acompañamiento de ex alumnos</h3>
             <p>
-              Programas para capacitar equipos internos: desde fundamentos de HTML/CSS hasta herramientas avanzadas de DevOps y automatización.
+              Mentorías continuas para sostener el aprendizaje después del curso: clubes de práctica, revisiones de proyectos y preparación para nuevos desafíos.
             </p>
             <ul>
-              <li>Workshops personalizados</li>
-              <li>Sesiones 1:1 con feedback continuo</li>
-              <li>Planes de estudio y retos guiados</li>
+              <li>Sesiones grupales y 1:1 según objetivos.</li>
+              <li>Plan de crecimiento técnico y humano.</li>
+              <li>Comunidades autogestionadas con soporte.</li>
             </ul>
           </article>
         </div>
@@ -844,48 +864,51 @@
       <div class="section-inner">
         <div class="section-header">
           <span class="section-kicker">Proyectos</span>
-          <h2 class="section-title">Soluciones que combinan estética y funcionalidad.</h2>
+          <h2 class="section-title">Iniciativas que sostienen el aprendizaje.</h2>
           <p class="section-description">
-            Estos son algunos casos recientes. Cada proyecto parte de entrevistas, prototipos y pruebas frecuentes para asegurar que el resultado final cumpla objetivos concretos.
+            Cada proyecto nace de escuchar a docentes, estudiantes y coordinadores. El resultado es siempre un entorno estable que permite experimentar sin miedo y compartir conocimiento.
           </p>
         </div>
         <div class="projects-grid">
           <article class="project-card">
             <div class="project-card-content">
-              <span class="project-tag">Frontend · React</span>
-              <h3>Panel analítico para fintech</h3>
+              <span class="project-tag">SRE educativo</span>
+              <h3>Laboratorio DevOps comunitario</h3>
               <p>
-                Dashboard responsive con visualizaciones en tiempo real y alertas configurables. Incluye modo oscuro, accesibilidad AA y componentes reutilizables.
+                Implementé un entorno de práctica con contenedores, monitoreo y alertas en vivo para talleres de administración de sistemas.
+                Documenté cada servicio para que el equipo organizador pudiera replicarlo en nuevas cohortes.
               </p>
               <div class="project-meta">
                 <span>2024</span>
-                <a class="project-link" href="/projects/">Ver caso completo →</a>
+                <a class="project-link" href="/projects/">Ver arquitectura →</a>
               </div>
             </div>
           </article>
           <article class="project-card">
             <div class="project-card-content">
-              <span class="project-tag">Full Stack</span>
-              <h3>Editor de notas colaborativo</h3>
+              <span class="project-tag">Docencia híbrida</span>
+              <h3>Ruta de aprendizaje flexible</h3>
               <p>
-                Aplicación web con autenticación, historial versionado y sincronización entre dispositivos. Optimicé el rendimiento con Web Workers y cache offline.
+                Diseñé un programa que combina clases presenciales, sesiones virtuales y proyectos integradores.
+                Incluye guías descargables, rúbricas transparentes y espacios de consulta asincrónicos.
               </p>
               <div class="project-meta">
                 <span>2023</span>
-                <a class="project-link" href="/proyectos/">Ver prototipo →</a>
+                <a class="project-link" href="/proyectos/">Explorar materiales →</a>
               </div>
             </div>
           </article>
           <article class="project-card">
             <div class="project-card-content">
-              <span class="project-tag">Educación</span>
-              <h3>Campus virtual para cursos</h3>
+              <span class="project-tag">Comunidad</span>
+              <h3>Red de ex alumnos</h3>
               <p>
-                Plataforma con rutas de aprendizaje, sistema de retos y analíticas para tutores. Incluye material descargable y módulos de retroalimentación inmediata.
+                Co-creamos un espacio de práctica continua con desafíos mensuales, servidores compartidos y sesiones de revisión.
+                El foco está en compartir aprendizajes reales y fortalecer la confianza técnica.
               </p>
               <div class="project-meta">
                 <span>2022</span>
-                <a class="project-link" href="/projects/">Material y demos →</a>
+                <a class="project-link" href="/projects/">Ver dinámicas →</a>
               </div>
             </div>
           </article>
@@ -897,37 +920,37 @@
       <div class="section-inner">
         <div class="section-header">
           <span class="section-kicker">Testimonios</span>
-          <h2 class="section-title">Historias de personas con las que trabajo.</h2>
+          <h2 class="section-title">Historias de ex alumnos y facilitadores.</h2>
           <p class="section-description">
-            La colaboración es la base de cada proyecto. Aquí algunas voces de clientes, colegas y estudiantes sobre los procesos que construimos juntos.
+            Mis mejores métricas son las voces que continúan creando después de cada curso. Compartimos aquí cómo la combinación de docencia y operaciones abrió nuevas posibilidades para ellas y ellos.
           </p>
         </div>
         <div class="testimonial-grid">
           <article class="testimonial-card">
             <p class="testimonial-quote">
-              "Christian lideró la migración de nuestro backend y definió la arquitectura CI/CD. Su visión nos permitió lanzar iteraciones semanales sin dolores de cabeza."
+              "Llegué sin experiencia en servidores y hoy administro los laboratorios de mi escuela. Las guías que armamos juntos me permiten enseñar y operar con seguridad."
             </p>
             <div class="testimonial-author">
-              <span>Laura Méndez</span>
-              <span>CTO · Startup fintech</span>
+              <span>Paula Herrera</span>
+              <span>Ex alumna · Coordinadora de laboratorio</span>
             </div>
           </article>
           <article class="testimonial-card">
             <p class="testimonial-quote">
-              "Sus workshops combinan teoría y práctica. Nuestro equipo aprendió a colaborar con Git y a implementar pruebas automatizadas en pocas semanas."
+              "En las clases híbridas, cada actividad venía con checklist y documentación. Eso hizo que el traspaso a clases virtuales fuera natural y no perdiéramos ritmo."
             </p>
             <div class="testimonial-author">
-              <span>Diego Carranza</span>
-              <span>Líder de producto · Estudio creativo</span>
+              <span>Germán Valle</span>
+              <span>Docente invitado · Programa intensivo</span>
             </div>
           </article>
           <article class="testimonial-card">
             <p class="testimonial-quote">
-              "Las mentorías 1:1 me ayudaron a pasar de HTML básico a construir mis primeras apps full stack. Explica conceptos complejos con ejemplos reales."
+              "Las mentorías posteriores al curso me ayudaron a sostener una rutina y abrir mi propio club de práctica. Hoy comparto los mismos materiales con nuevas generaciones."
             </p>
             <div class="testimonial-author">
-              <span>Mariana Gómez</span>
-              <span>Estudiante · Comunidad online</span>
+              <span>Luisina Cabrera</span>
+              <span>Ex alumna · Facilitadora comunitaria</span>
             </div>
           </article>
         </div>
@@ -937,9 +960,10 @@
     <section id="contact" class="section">
       <div class="section-inner">
         <div class="contact-card">
-          <h3>¿Nos tomamos un café virtual?</h3>
+          <h3>Planifiquemos tu próxima clase o despliegue.</h3>
           <p>
-            Cuéntame sobre tus ideas, necesidades técnicas o planes de formación. Respondo en menos de 48 horas con una propuesta personalizada y próximos pasos.
+            Contame qué necesitas fortalecer: infraestructura, guías docentes o acompañamiento para ex alumnos.
+            Respondo en menos de 48 horas con propuestas presenciales, virtuales o mixtas.
           </p>
           <div class="contact-actions">
             <a class="btn-primary" href="mailto:contacto@christprof.dev">Escríbeme</a>
