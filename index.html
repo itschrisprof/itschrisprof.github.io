@@ -2,107 +2,970 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Inicio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Christian Barrios | Facilitador multiuso & SRE educativo</title>
+  <meta name="description" content="Portfolio de Christian Barrios, facilitador multiuso enfocado en docencia de programación y administración de servidores. Diseño clases presenciales y virtuales, y acompaño equipos en cultura SRE." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/main.css" />
   <style>
-    html { scroll-behavior: smooth; }
+    :root {
+      --bg-primary: #040b17;
+      --bg-secondary: #070f24;
+      --surface: rgba(9, 20, 46, 0.75);
+      --surface-strong: rgba(18, 32, 64, 0.88);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #30f2aa;
+      --accent-strong: #22d3a6;
+      --accent-soft: rgba(48, 242, 170, 0.14);
+      --border-subtle: rgba(255, 255, 255, 0.06);
+      --max-width: 1100px;
+      --radius-lg: 1.5rem;
+      --radius-md: 1rem;
+      --shadow-lg: 0 35px 60px -20px rgba(12, 18, 38, 0.55);
+      --shadow-soft: 0 20px 40px -18px rgba(15, 35, 64, 0.4);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body.landing-body {
+      margin: 0;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--text-main);
+      background:
+        radial-gradient(circle at 10% -10%, rgba(48, 242, 170, 0.12), transparent 55%),
+        radial-gradient(circle at 85% 10%, rgba(14, 165, 233, 0.15), transparent 55%),
+        radial-gradient(circle at 50% 80%, rgba(124, 58, 237, 0.12), transparent 60%),
+        var(--bg-primary);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-attachment: fixed;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(95deg, rgba(4, 11, 23, 0.95), rgba(7, 15, 36, 0.72));
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-container {
+      margin: 0 auto;
+      max-width: var(--max-width);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(48, 242, 170, 0.8);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      position: relative;
+      text-decoration: none;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 -0.5rem 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--text-main);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .hero {
+      position: relative;
+      padding: 6.5rem 1.5rem 5rem;
+    }
+
+    .hero-inner {
+      margin: 0 auto;
+      max-width: var(--max-width);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      background: rgba(48, 242, 170, 0.16);
+      border: 1px solid rgba(48, 242, 170, 0.35);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.75rem;
+    }
+
+    h1.hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.8rem, 5vw, 4.4rem);
+      line-height: 1.05;
+      margin: 0;
+      text-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-description {
+      max-width: 34rem;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, rgba(48, 242, 170, 0.95), rgba(14, 165, 233, 0.85));
+      color: #021118;
+      box-shadow: 0 18px 35px -15px rgba(48, 242, 170, 0.9);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 40px -18px rgba(48, 242, 170, 0.95);
+    }
+
+    .btn-secondary {
+      background: rgba(10, 24, 51, 0.75);
+      border-color: rgba(148, 163, 184, 0.18);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      transform: translateY(-2px);
+      background: rgba(12, 28, 59, 0.95);
+      border-color: rgba(148, 163, 184, 0.35);
+    }
+
+    .hero-terminal {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: radial-gradient(circle at 0% 0%, rgba(48, 242, 170, 0.28), transparent 55%), var(--surface-strong);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      box-shadow: var(--shadow-lg);
+      min-height: 420px;
+    }
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 1rem 1.25rem;
+      background: rgba(15, 23, 42, 0.65);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+    }
+
+    .terminal-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(148, 163, 184, 0.45);
+    }
+
+    .terminal-body {
+      position: relative;
+      height: 100%;
+      padding: 2rem 2.5rem 2.5rem;
+      font-size: 1rem;
+      color: #30f2aa;
+      line-height: 1.8;
+      font-weight: 500;
+      white-space: pre-wrap;
+      text-shadow: 0 12px 18px rgba(0, 0, 0, 0.55);
+    }
+
+    .cursor-blink {
+      display: inline-block;
+      width: 0.6rem;
+      height: 1.3rem;
+      background: currentColor;
+      margin-left: 0.2rem;
+      animation: blink 1.1s steps(2, start) infinite;
+    }
+
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+      max-width: 32rem;
+    }
+
+    .stat-card {
+      background: rgba(13, 23, 47, 0.65);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1.25rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 1.9rem;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    section.section {
+      padding: 5.5rem 1.5rem;
+    }
+
+    .section-inner {
+      margin: 0 auto;
+      max-width: var(--max-width);
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.1rem, 4vw, 2.9rem);
+      margin: 0;
+    }
+
+    .section-description {
+      max-width: 38rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .feature-card {
+      background: rgba(12, 21, 43, 0.72);
+      border-radius: var(--radius-md);
+      padding: 2.1rem 2rem;
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: transform 0.2s ease, border 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(48, 242, 170, 0.35);
+    }
+
+    .feature-card span.icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .feature-card h3 {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .feature-card ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .about-card {
+      background: rgba(12, 21, 43, 0.78);
+      border-radius: var(--radius-lg);
+      padding: 2.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .timeline-item {
+      background: rgba(7, 16, 36, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      border-radius: var(--radius-md);
+      padding: 1.4rem 1.6rem;
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .timeline-item strong {
+      color: var(--accent);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      position: relative;
+      background: rgba(11, 19, 41, 0.75);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      display: flex;
+      flex-direction: column;
+      min-height: 280px;
+      transition: transform 0.2s ease, border 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(48, 242, 170, 0.35);
+    }
+
+    .project-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(48, 242, 170, 0.15);
+      color: var(--accent);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+    }
+
+    .project-card-content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      flex: 1;
+    }
+
+    .project-card h3 {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+    }
+
+    .project-card p {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    .project-meta {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .project-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .testimonial-card {
+      background: rgba(8, 17, 36, 0.75);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      padding: 2.1rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .testimonial-quote {
+      font-size: 0.98rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .testimonial-quote::before {
+      content: '"';
+      position: absolute;
+      left: 0;
+      top: -0.5rem;
+      font-size: 2.8rem;
+      color: rgba(48, 242, 170, 0.4);
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .testimonial-author span {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .contact-card {
+      background: rgba(9, 20, 46, 0.78);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      display: grid;
+      gap: 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-card h3 {
+      margin: 0;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.1rem;
+    }
+
+    .contact-card p {
+      margin: 0;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    footer.site-footer {
+      padding: 3rem 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      background: rgba(4, 11, 23, 0.92);
+    }
+
+    .footer-inner {
+      margin: 0 auto;
+      max-width: var(--max-width);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: var(--accent);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-main);
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 960px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+      .hero-terminal {
+        order: -1;
+        min-height: 360px;
+      }
+      .hero-copy {
+        text-align: center;
+        align-items: center;
+      }
+      .hero-description {
+        max-width: none;
+      }
+      .hero-stats {
+        justify-items: center;
+      }
+      .about-grid,
+      .projects-grid,
+      .testimonial-grid,
+      .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-container {
+        flex-wrap: wrap;
+      }
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 0.85rem;
+      }
+      .hero {
+        padding-top: 5rem;
+      }
+      .hero-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .about-grid,
+      .projects-grid,
+      .testimonial-grid,
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-card {
+        padding: 2.4rem 1.8rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+      .cta-group {
+        width: 100%;
+        justify-content: center;
+      }
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+    }
   </style>
 </head>
-<body class="font-mono bg-white text-black flex flex-col min-h-screen">
-<header class="p-6 bg-gray-100 sticky top-0 z-20">
-  <div class="max-w-4xl mx-auto flex items-center justify-between">
-    <h1 class="text-3xl font-bold"><a href="#hero">Mi Portfolio</a></h1>
-    <nav>
-      <ul class="flex space-x-4 font-mono">
-        <li><a href="#hero"    class="hover:text-term-green">Inicio</a></li>
-        <li><a href="#about"   class="hover:text-term-green">Sobre mí</a></li>
-        <li><a href="#skills"  class="hover:text-term-green">Skills</a></li>
-        <li><a href="#contact" class="hover:text-term-green">Contacto</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-<main class="flex-1">
-    <!-- Hero -->
-<section id="hero" class="relative h-screen bg-black overflow-hidden">
-  <!-- Terminal -->
-  <pre id="terminal"
-       class="absolute inset-0 m-0 p-8 font-mono text-green-400 text-lg select-none pointer-events-none">
-    <span class="prompt">$ </span><span id="typed"></span><span class="cursor-blink inline-block w-1 bg-green-400"></span>
-  </pre>
-  <!-- Contenido -->
-  <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 text-white opacity-0 animate-fade-in-scale delay-500">
-    <h1 class="font-pixel text-5xl md:text-7xl mb-4">Hola, soy yo</h1>
-    <p class="font-mono text-lg md:text-xl mb-6">Desarrollador Full Stack, profesor y fan de Linux</p>
-    <a href="#about"
-       class="px-8 py-3 bg-white text-black rounded-lg hover:bg-term-amber transition">
-      Sobre mí
-    </a>
-  </div>
-</section>
-<!-- Sobre mí -->
-<!-- Sobre mí -->
-<section id="about" class="py-16 bg-gray-50">
-  <div class="max-w-4xl mx-auto grid gap-8 md:grid-cols-2 items-center">
-    <!-- Avatar -->
-    <img
-      src="/assets/images/tux-pixel.png"
-      alt="Avatar Tux Pixel"
-      class="w-40 h-40 mx-auto rounded-full border-4 border-term-green
-             animate-fade-in-scale delay-200"
-    />
-<p><!-- Texto de presentación -->
-<div class="space-y-4 animate-fade-in-scale delay-400">
-<h2 class="text-3xl font-pixel text-center md:text-left">
-Sobre mí
-</h2>
-<p class="font-mono text-term-text leading-relaxed">
-¡Hola! Soy Juan Pérez, <strong>desarrollador Full Stack</strong> y
-apasionado de <em>Linux</em>. Me encanta crear herramientas web
-sencillas pero potentes, y en mi tiempo libre disfruto explorando
-comandos de terminal y perfeccionando mi pixel art.
-</p>
-<ul class="space-y-2 font-mono">
-<li><span class="font-bold">🖥️ 2020:</span> Comienzo con proyectos en JavaScript.</li>
-<li><span class="font-bold">🛠️ 2022:</span> Desarrollé mi propio editor de notas.</li>
-<li><span class="font-bold">📚 2024:</span> Profesor de desarrollo web en línea.</li>
-</ul></p>
-<p><!-- Botón CTA secundario -->
-<a href="#skills"
-         class="inline-block mt-4 px-6 py-2 bg-term-green text-black rounded-lg
-                hover:bg-term-amber transition animate-fade-in-scale delay-600"
-      >
-Ver Skills
-</a>
-</div></p>
-  </div>
-</section>
-<!-- Skills -->
-<section id="skills" class="py-16">
-  <div class="max-w-4xl mx-auto space-y-8">
-    <!-- tu grid de skills... -->
-  </div>
-</section>
-<!-- Contacto -->
-<section id="contact" class="py-16 bg-gray-50">
-  <div class="max-w-md mx-auto space-y-6 animate-fade-in-scale">
-    <!-- tu formulario... -->
-  </div>
-</section>
+<body class="landing-body">
+  <header class="top-nav">
+    <div class="nav-container">
+      <a class="brand" href="#hero">Christian Barrios</a>
+      <nav class="nav-links">
+        <a href="#hero">Inicio</a>
+        <a href="#about">Sobre mí</a>
+        <a href="#services">Servicios</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#testimonials">Testimonios</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">Educador técnico · SRE multiuso</span>
+          <h1 class="hero-title">Multiplico el aprendizaje con infraestructura estable y humana.</h1>
+          <p class="hero-description">
+            Soy Christian Barrios, un facilitador multiuso que acompaña a comunidades, escuelas y equipos en su viaje tecnológico.
+            Combino la docencia de programación con la administración de servidores para que cada clase —presencial o virtual— se apoye en plataformas confiables y accesibles.
+          </p>
+          <div class="cta-group">
+            <a class="btn-primary" href="#services">Descubrir programas educativos</a>
+            <a class="btn-secondary" href="#contact">Coordinar una sesión</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-card">
+              <strong>7+</strong>
+              Años conectando aulas y operaciones
+            </div>
+            <div class="stat-card">
+              <strong>120</strong>
+              Clases presenciales y virtuales facilitadas
+            </div>
+            <div class="stat-card">
+              <strong>18</strong>
+              Infraestructuras educativas documentadas
+            </div>
+          </div>
+        </div>
+        <div class="hero-terminal">
+          <div class="terminal-header">
+            <span class="terminal-dot" style="background:#f87171"></span>
+            <span class="terminal-dot" style="background:#facc15"></span>
+            <span class="terminal-dot" style="background:#4ade80"></span>
+          </div>
+          <div class="terminal-body">
+            <span class="prompt">$</span>
+            <span id="typed"></span>
+            <span class="cursor-blink"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-kicker">Sobre mí</span>
+          <h2 class="section-title">Acompaño comunidades desde la terminal y el aula.</h2>
+          <p class="section-description">
+            Mi rol multiuso une la pedagogía con la confiabilidad operativa: diseño planes de estudio, mantengo servidores y comparto prácticas de cultura SRE.
+            Trabajo con herramientas libres y documentación clara para que cada equipo pueda continuar su camino sin depender de un único experto.
+          </p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Lo que me mueve</h3>
+            <p>
+              Crear entornos de aprendizaje seguros, inclusivos y sostenibles.
+              Me enfoco en traducir problemas complejos en guías accionables que combinan monitoreo, automatización y dinámicas participativas.
+            </p>
+            <ul>
+              <li>🧰 Diagnóstico integral de servidores y plataformas educativas.</li>
+              <li>👥 Programas híbridos que mezclan talleres presenciales y sesiones remotas.</li>
+              <li>📖 Documentación y manuales que empoderan a ex alumnos y facilitadores.</li>
+            </ul>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>2018 · Aula itinerante</strong>
+              <span>Comencé a dictar cursos presenciales de programación en centros comunitarios y escuelas técnicas.</span>
+            </div>
+            <div class="timeline-item">
+              <strong>2021 · Operaciones educativas</strong>
+              <span>Migré laboratorios virtuales a infraestructura Linux administrada con prácticas SRE y automatización de despliegues.</span>
+            </div>
+            <div class="timeline-item">
+              <strong>2024 · Comunidad de ex alumnos</strong>
+              <span>Coordino mentorías grupales online, círculos de estudio y documentación colaborativa para sostener el aprendizaje continuo.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-kicker">Servicios</span>
+          <h2 class="section-title">Programas que combinan docencia y confiabilidad.</h2>
+          <p class="section-description">
+            Diseñamos juntos experiencias de aprendizaje sostenibles: desde la infraestructura que sostiene la clase hasta el seguimiento personalizado de cada estudiante.
+            Trabajo con instituciones, comunidades y personas curiosas que valoran la experimentación guiada.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="icon">🖥️</span>
+            <h3>Infraestructura educativa</h3>
+            <p>
+              Implemento y administro servidores Linux, entornos de práctica y pipelines de despliegue pensados para talleres y bootcamps.
+              Todo queda documentado para que el equipo pueda continuar iterando.
+            </p>
+            <ul>
+              <li>Monitoreo y alertas adaptadas a cohortes.</li>
+              <li>Laboratorios reproducibles con contenedores.</li>
+              <li>Automatización de respaldos y accesos.</li>
+            </ul>
+          </article>
+          <article class="feature-card">
+            <span class="icon">🎒</span>
+            <h3>Clases híbridas</h3>
+            <p>
+              Diseños curriculares orientados a la práctica con materiales descargables, guías paso a paso y dinámicas colaborativas presenciales y online.
+            </p>
+            <ul>
+              <li>Secuencias didácticas personalizadas.</li>
+              <li>Evaluaciones vivas y feedback en vivo.</li>
+              <li>Recursos accesibles y orientados a la diversidad.</li>
+            </ul>
+          </article>
+          <article class="feature-card">
+            <span class="icon">🤝</span>
+            <h3>Acompañamiento de ex alumnos</h3>
+            <p>
+              Mentorías continuas para sostener el aprendizaje después del curso: clubes de práctica, revisiones de proyectos y preparación para nuevos desafíos.
+            </p>
+            <ul>
+              <li>Sesiones grupales y 1:1 según objetivos.</li>
+              <li>Plan de crecimiento técnico y humano.</li>
+              <li>Comunidades autogestionadas con soporte.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-kicker">Proyectos</span>
+          <h2 class="section-title">Iniciativas que sostienen el aprendizaje.</h2>
+          <p class="section-description">
+            Cada proyecto nace de escuchar a docentes, estudiantes y coordinadores. El resultado es siempre un entorno estable que permite experimentar sin miedo y compartir conocimiento.
+          </p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-card-content">
+              <span class="project-tag">SRE educativo</span>
+              <h3>Laboratorio DevOps comunitario</h3>
+              <p>
+                Implementé un entorno de práctica con contenedores, monitoreo y alertas en vivo para talleres de administración de sistemas.
+                Documenté cada servicio para que el equipo organizador pudiera replicarlo en nuevas cohortes.
+              </p>
+              <div class="project-meta">
+                <span>2024</span>
+                <a class="project-link" href="/projects/">Ver arquitectura →</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card-content">
+              <span class="project-tag">Docencia híbrida</span>
+              <h3>Ruta de aprendizaje flexible</h3>
+              <p>
+                Diseñé un programa que combina clases presenciales, sesiones virtuales y proyectos integradores.
+                Incluye guías descargables, rúbricas transparentes y espacios de consulta asincrónicos.
+              </p>
+              <div class="project-meta">
+                <span>2023</span>
+                <a class="project-link" href="/proyectos/">Explorar materiales →</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card-content">
+              <span class="project-tag">Comunidad</span>
+              <h3>Red de ex alumnos</h3>
+              <p>
+                Co-creamos un espacio de práctica continua con desafíos mensuales, servidores compartidos y sesiones de revisión.
+                El foco está en compartir aprendizajes reales y fortalecer la confianza técnica.
+              </p>
+              <div class="project-meta">
+                <span>2022</span>
+                <a class="project-link" href="/projects/">Ver dinámicas →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <span class="section-kicker">Testimonios</span>
+          <h2 class="section-title">Historias de ex alumnos y facilitadores.</h2>
+          <p class="section-description">
+            Mis mejores métricas son las voces que continúan creando después de cada curso. Compartimos aquí cómo la combinación de docencia y operaciones abrió nuevas posibilidades para ellas y ellos.
+          </p>
+        </div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              "Llegué sin experiencia en servidores y hoy administro los laboratorios de mi escuela. Las guías que armamos juntos me permiten enseñar y operar con seguridad."
+            </p>
+            <div class="testimonial-author">
+              <span>Paula Herrera</span>
+              <span>Ex alumna · Coordinadora de laboratorio</span>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              "En las clases híbridas, cada actividad venía con checklist y documentación. Eso hizo que el traspaso a clases virtuales fuera natural y no perdiéramos ritmo."
+            </p>
+            <div class="testimonial-author">
+              <span>Germán Valle</span>
+              <span>Docente invitado · Programa intensivo</span>
+            </div>
+          </article>
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              "Las mentorías posteriores al curso me ayudaron a sostener una rutina y abrir mi propio club de práctica. Hoy comparto los mismos materiales con nuevas generaciones."
+            </p>
+            <div class="testimonial-author">
+              <span>Luisina Cabrera</span>
+              <span>Ex alumna · Facilitadora comunitaria</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="section-inner">
+        <div class="contact-card">
+          <h3>Planifiquemos tu próxima clase o despliegue.</h3>
+          <p>
+            Contame qué necesitas fortalecer: infraestructura, guías docentes o acompañamiento para ex alumnos.
+            Respondo en menos de 48 horas con propuestas presenciales, virtuales o mixtas.
+          </p>
+          <div class="contact-actions">
+            <a class="btn-primary" href="mailto:contacto@christprof.dev">Escríbeme</a>
+            <a class="btn-secondary" href="https://github.com/ChristProf" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
-<footer class="p-6 bg-gray-100 text-center font-mono text-sm">
-  <div class="max-w-4xl mx-auto">
-   <ul class="text-sm">
-  <li>© 2025 Christian Barrios</li>
-  <li>
-    <a href="https://github.com/ChristProf" class="text-term-green hover:underline">GitHub</a>
-  </li>
-</ul>
 
-  </div>
-</footer>
-<script src="/assets/js/main.js"></script>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2025 Christian Barrios · Inspirado por el software libre.</span>
+      <div class="footer-links">
+        <a href="/about/">Sobre mí</a>
+        <a href="/projects/">Proyectos</a>
+        <a href="/contact/">Contacto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
 </body>
 </html>
-
